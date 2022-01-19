@@ -1,6 +1,9 @@
-from distutils.debug import DEBUG
-from app import app, db
+from app import create_app
+import app.config
 
-if __name__ == "__main__":
-    db.create_all()
-    app.run(DEBUG)
+
+app = create_app(app.config)
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1')
