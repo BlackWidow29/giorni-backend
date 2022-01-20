@@ -1,7 +1,7 @@
 from flask import Flask
 from .config import db, login_manager, SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS, SECRET_KEY
 
-from .model import User
+from .model import fornecedor, usuario, material, fornecedor_material, servico, material_servico, endereco, cliente
 
 
 def create_app(config):
@@ -19,17 +19,3 @@ def create_app(config):
         db.create_all()
 
     return app
-
-
-"""
-from flask import Flask
-from flask_login import LoginManager
-from flask_sqlalchemy import SQLAlchemy
-
-
-app = Flask(__name__)
-app.config.from_object('config')
-login_manager = LoginManager(app)
-db = SQLAlchemy(app)
-db.init_app(app)
-"""
